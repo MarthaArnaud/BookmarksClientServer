@@ -245,7 +245,7 @@ app.patch('/bookmark/:id',jsonParser,(req, res)=>{
     
 });
 
-app.listen(1000 ,()=>{
+app.listen(PORT ,()=>{
   console.log("This server is running on port 1000"); 
   new Promise ((resolve, reject)=>{
     const settings = {
@@ -253,7 +253,7 @@ app.listen(1000 ,()=>{
         useUnifiedTopology: true,
         useCreateIndex: true
     };
-    mongoose.connect('mongodb://localhost/bookmarksdb', settings, err=>{
+    mongoose.connect(DATABASE_URL, settings, err=>{
         if(err){
             return reject(err);
         }
