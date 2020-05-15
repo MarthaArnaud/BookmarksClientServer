@@ -6,6 +6,7 @@ const {Bookmarks} = require ('./models/bookmarksModel');
 const mongoose = require ('mongoose');
 const cors = require( './middleware/cors' );
 const TOKEN = '2abbf7c3-245b-404f-9473-ade729ed4653';
+const {DATABASE_URL, PORT} = require( './config' );
 
 const jsonParser = bodyParser.json();
 const app = express();
